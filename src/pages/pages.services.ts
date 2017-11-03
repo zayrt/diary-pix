@@ -16,7 +16,7 @@ export class PagesService {
 
   signup(data): Observable<any> {
     let signupObservable = Observable.fromPromise(new Promise((resolve, reject) => {
-      this.http.post(this.API_URL + 'users/sign_up', data, this.options)
+      this.http.post(this.API_URL + 'users', data, this.options)
         .toPromise()
         .then((response) =>
         {
