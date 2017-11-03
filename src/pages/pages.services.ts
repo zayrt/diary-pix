@@ -4,32 +4,22 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/observable/fromPromise";
+import 'rxjs/add/operator/map';
+import 'rxjs/Rx';
+
+const API_URL = "http://memoriz-api.herokuapp.com/";
+const headers = new Headers({'Content-Type': 'application/json'});
+const options = new RequestOptions({headers: headers});
 
 @Injectable()
 export class PagesService {
   constructor(private http: Http) {
   }
 
-  const API_URL = "http://memoriz-api.herokuapp.com/";
-  const headers = new Headers({'Content-Type': 'application/json'});
-  const options = new RequestOptions({headers: this.headers});
-
-  signup(data): Observable<any> {
-    let signupObservable = Observable.fromPromise(new Promise((resolve, reject) => {
-      this.http.post(this.API_URL + 'users', data, this.options)
-        .toPromise()
-        .then((response) =>
-        {
-          console.log('API Response : ', response.json());
-          resolve(response.json());
-        })
-        .catch((error) =>
-        {
-          console.error('API Error : ', error.status);
-          console.error('API Error : ', JSON.stringify(error));
-          reject(error.json());
-        });
-    }));
+  signup(data) {
+    return this.http.post(API_URL + 'users', data, options)
+      .map(res => res.json());
   }
+
 }
 

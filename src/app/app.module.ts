@@ -10,6 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {PagesService} from "../pages/pages.services";
 import {HttpModule} from "@angular/http";
+import {MatSnackBar} from '@angular/material';
+import {SpinnerModule} from "angular-spinners";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import {HttpModule} from "@angular/http";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    SpinnerModule,
+    MatSnackBar,
     HttpModule
   ],
   bootstrap: [IonicApp],
@@ -37,6 +41,8 @@ import {HttpModule} from "@angular/http";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PagesService
+  ],
+  schemas: [
   ]
 })
 export class AppModule {}

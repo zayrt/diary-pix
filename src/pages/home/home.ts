@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {PagesService} from "../pages.services";
+import {SpinnerService} from "angular-spinners";
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  private signupForm: FormGroup;
+  signupForm: FormGroup;
+  status = '';
+  snack_msg;
 
-  constructor(public navCtrl: NavController, private fb: FormBuilder, private pageService: PagesService) {
+  constructor(public navCtrl: NavController, private fb: FormBuilder, private pageService: PagesService, private spinnerService: SpinnerService) {
     this.signupForm = this.buildForm();
   }
 
@@ -24,8 +28,21 @@ export class HomePage {
       password_confirmation: this.signupForm.controls.password_confirmation.value,
       avatar: this.signupForm.controls.avatar.value,
     };
-    console.log(data)
-    this.pageService.signup(data);
+    this.spinnerService.show('loader');
+    this.pageService.signup(data).subscribe(
+      res => {
+        this.status = 'success';
+        this.snack_msg = 'Inscription réussi !';
+      },
+      error => {
+        let err = JSON.parse(error._body).error;
+        this.snack_msg = err;
+        this.status = 'error';
+        this.spinnerService.hide('loader');
+      },
+      () => {
+      }
+    );
   }
 
   buildForm() {
