@@ -10,14 +10,14 @@
       <div class="col-md-4 col-md-offset-4">
       <div class="main-login main-center">
         <h2>Créer un compte.</h2>
-        <form>
+        <form [formGroup]="signupForm">
 
           <div class="form-group">
             <label for="firstname" class="cols-sm-2 control-label">Votre prénom</label>
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="firstname" id="firstname"  placeholder="Entrer votre prénom"/>
+                <input type="text" formControlName="firstname" class="form-control" name="firstname" id="firstname"  placeholder="Entrer votre prénom"/>
               </div>
             </div>
           </div>
@@ -27,7 +27,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="lastname" id="lastname"  placeholder="Entrer votre nom"/>
+                <input type="text" formControlName="lastname" class="form-control" name="lastname" id="lastname"  placeholder="Entrer votre nom"/>
               </div>
             </div>
           </div>
@@ -37,7 +37,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="username" id="username"  placeholder="Entrer votre nom d'utilisateur"/>
+                <input type="text" formControlName="username" class="form-control" name="username" id="username"  placeholder="Entrer votre nom d'utilisateur"/>
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="email" id="email"  placeholder="Entrer votre Email"/>
+                <input type="text" formControlName="email" class="form-control" name="email" id="email"  placeholder="Entrer votre Email"/>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" id="password"  placeholder="Entrer votre mot de passe"/>
+                <input type="password" formControlName="password" class="form-control" name="password" id="password"  placeholder="Entrer votre mot de passe"/>
               </div>
             </div>
           </div>
@@ -68,14 +68,14 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="Confirmation du mot de passe"/>
+                <input type="password" formControlName="password_confirmation" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="Confirmation du mot de passe"/>
               </div>
             </div>
           </div>
 
           <div class="form-group">
             <label for="avatar">Photo de profil</label>
-            <input type="file" class="form-control-file" id="avatar" aria-describedby="fileHelp">
+            <input type="file" formControlName="avatar" class="form-control-file" id="avatar" aria-describedby="fileHelp">
             <small id="fileHelp" class="form-text text-muted">Upload de votre photo de profil.</small>
           </div>
 
