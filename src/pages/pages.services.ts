@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import "rxjs/add/observable/fromPromise";
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 // import {Observable} from "rxjs/Observable";
 import {User} from "./user.model";
 
