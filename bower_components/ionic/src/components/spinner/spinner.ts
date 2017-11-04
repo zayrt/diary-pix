@@ -83,7 +83,7 @@ import { isTrueProperty } from '../../util/util';
  * ```
  *
  * ## Styling SVG with CSS
- * One cool thing about SVG is its ability to be styled with CSS! One thing to note
+ * One cool thing login SVG is its ability to be styled with CSS! One thing to note
  * is that some of the CSS properties on an SVG element have different names. For
  * example, SVG uses the term `stroke` instead of `border`, and `fill` instead
  * of `background-color`.

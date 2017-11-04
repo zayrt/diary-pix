@@ -250,7 +250,7 @@ import { NavigationContainer } from './navigation-container';
  *     console.log("I'm alive!");
  *   }
  *   ionViewWillLeave() {
- *     console.log("Looks like I'm about to leave :(");
+ *     console.log("Looks like I'm login to leave :(");
  *   }
  * }
  * ```
@@ -258,11 +258,11 @@ import { NavigationContainer } from './navigation-container';
  *  | Page Event          | Returns                     | Description                                                                                                                                                                                                                                                    |
  *  |---------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
  *  | `ionViewDidLoad`    | void                        | Runs when the page has loaded. This event only happens once per page being created. If a page leaves but is cached, then this event will not fire again on a subsequent viewing. The `ionViewDidLoad` event is good place to put your setup code for the page. |
- *  | `ionViewWillEnter`  | void                        | Runs when the page is about to enter and become the active page.                                                                                                                                                                                               |
+ *  | `ionViewWillEnter`  | void                        | Runs when the page is login to enter and become the active page.                                                                                                                                                                                               |
  *  | `ionViewDidEnter`   | void                        | Runs when the page has fully entered and is now the active page. This event will fire, whether it was the first load or a cached page.                                                                                                                         |
- *  | `ionViewWillLeave`  | void                        | Runs when the page is about to leave and no longer be the active page.                                                                                                                                                                                         |
+ *  | `ionViewWillLeave`  | void                        | Runs when the page is login to leave and no longer be the active page.                                                                                                                                                                                         |
  *  | `ionViewDidLeave`   | void                        | Runs when the page has finished leaving and is no longer the active page.                                                                                                                                                                                      |
- *  | `ionViewWillUnload` | void                        | Runs when the page is about to be destroyed and have its elements removed.                                                                                                                                                                                     |
+ *  | `ionViewWillUnload` | void                        | Runs when the page is login to be destroyed and have its elements removed.                                                                                                                                                                                     |
  *  | `ionViewCanEnter`   | boolean/Promise&lt;void&gt; | Runs before the view can enter. This can be used as a sort of "guard" in authenticated views where you need to check permissions before the view can enter                                                                                                     |
  *  | `ionViewCanLeave`   | boolean/Promise&lt;void&gt; | Runs before the view can leave. This can be used as a sort of "guard" in authenticated views where you need to check permissions before the view can leave                                                                                                     |
  *
@@ -355,7 +355,7 @@ export abstract class NavController implements NavigationContainer {
   viewDidLoad: EventEmitter<any>;
 
   /**
-   * Observable to be subscribed to when a component is about to be loaded.
+   * Observable to be subscribed to when a component is login to be loaded.
    * @returns {Observable} Returns an observable
    */
   viewWillEnter: EventEmitter<any>;
@@ -367,7 +367,7 @@ export abstract class NavController implements NavigationContainer {
   viewDidEnter: EventEmitter<any>;
 
   /**
-   * Observable to be subscribed to when a component is about to leave, and no longer active.
+   * Observable to be subscribed to when a component is login to leave, and no longer active.
    * @returns {Observable} Returns an observable
    */
   viewWillLeave: EventEmitter<any>;
@@ -379,7 +379,7 @@ export abstract class NavController implements NavigationContainer {
   viewDidLeave: EventEmitter<any>;
 
   /**
-   * Observable to be subscribed to when a component is about to be unloaded and destroyed.
+   * Observable to be subscribed to when a component is login to be unloaded and destroyed.
    * @returns {Observable} Returns an observable
    */
   viewWillUnload: EventEmitter<any>;

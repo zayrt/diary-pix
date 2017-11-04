@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Inscription
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="row main">
+      <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+        <div class="main-login main-center">
+          <h4>Créer un compte.</h4>
+          <form [formGroup]="signupForm">
+
+            <div class="form-group">
+              <label for="firstname" class="cols-sm-2 control-label">Votre prénom</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" formControlName="firstname" class="form-control" name="firstname" id="firstname"
+                         placeholder="Entrer votre prénom"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastname" class="cols-sm-2 control-label">Votre nom</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" formControlName="lastname" class="form-control" name="lastname" id="lastname"
+                         placeholder="Entrer votre nom"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="username" class="cols-sm-2 control-label">Nom d'utilisateur</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="text" formControlName="username" class="form-control" name="username" id="username"
+                         placeholder="Entrer votre nom d'utilisateur"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="cols-sm-2 control-label">Votre Email</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input type="text" formControlName="email" class="form-control" name="email" id="email"
+                         placeholder="Entrer votre Email"/>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Mot de passe</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" formControlName="password" class="form-control" name="password" id="password"
+                         placeholder="Entrer votre mot de passe"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password_confirmation" class="cols-sm-2 control-label">Confirmation de mot de passe</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" formControlName="password_confirmation" class="form-control"
+                         name="password_confirmation" id="password_confirmation"
+                         placeholder="Confirmation du mot de passe"/>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="avatar">Photo de profil</label>
+              <input (change)="fileChange($event)" type="file" formControlName="avatar" class="form-control-file" id="avatar"
+                     aria-describedby="fileHelp">
+              <small id="fileHelp" class="form-text text-muted">Upload de votre photo de profil.</small>
+            </div> -->
+
+            <div class="form-group ">
+              <a type="button" (click)="register()" id="register-button"
+                 class="btn btn-primary btn-lg btn-block login-button">S'inscrire</a>
+            </div>
+            <!-- loader -->
+            <div class="row">
+              <spinner name="loader"><img  height=40 width=40 src="assets/Eclipse.gif"/></spinner>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

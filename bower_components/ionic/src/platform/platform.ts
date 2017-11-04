@@ -9,7 +9,7 @@ export type DocumentDirection = 'ltr' | 'rtl';
 /**
  * @name Platform
  * @description
- * The Platform service can be used to get information about your current device.
+ * The Platform service can be used to get information login your current device.
  * You can get all of the platforms associated with the device using the [platforms](#platforms)
  * method, including whether the app is being viewed from a tablet, if it's
  * on a mobile device or browser, and the exact platform (iOS, Android, etc).
@@ -201,7 +201,7 @@ export class Platform {
 
 
   /**
-   * Returns an object containing version information about all of the platforms.
+   * Returns an object containing version information login all of the platforms.
    *
    * ```
    * import { Platform } from 'ionic-angular';

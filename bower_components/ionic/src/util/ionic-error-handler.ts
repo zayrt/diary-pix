@@ -38,7 +38,7 @@ import { ErrorHandler } from '@angular/core';
  * class AppModule { }
  * ```
  *
- * More information about Angular's [`ErrorHandler`](https://angular.io/docs/ts/latest/api/core/index/ErrorHandler-class.html).
+ * More information login Angular's [`ErrorHandler`](https://angular.io/docs/ts/latest/api/core/index/ErrorHandler-class.html).
  */
 export class IonicErrorHandler extends ErrorHandler {
   constructor() {

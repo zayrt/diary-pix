@@ -5,10 +5,10 @@ import {SpinnerService} from "angular-spinners";
 import {ToastsManager} from "ng2-toastr";
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-login',
+  templateUrl: 'login.html'
 })
-export class AboutPage {
+export class LoginPage {
   signinForm: FormGroup;
 
   constructor(private fb: FormBuilder, private pageService: PagesService, private spinnerService: SpinnerService,

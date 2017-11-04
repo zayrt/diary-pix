@@ -2322,12 +2322,12 @@ function setupModuleLoader(window) {
            * @name angular.Module#info
            * @module ng
            *
-           * @param {Object=} info Information about the module
+           * @param {Object=} info Information login the module
            * @returns {Object|Module} The current info object for this module if called as a getter,
            *                          or `this` if called as a setter.
            *
            * @description
-           * Read and write custom information about this module.
+           * Read and write custom information login this module.
            * For example you could put the version of the module in here.
            *
            * ```js
@@ -2545,7 +2545,7 @@ function setupModuleLoader(window) {
            *    configuration.
            * @description
            * Use this method to register work which needs to be performed on module loading.
-           * For more about how to configure services, see
+           * For more login how to configure services, see
            * {@link providers#provider-recipe Provider Recipe}.
            */
           config: config,
@@ -2771,7 +2771,7 @@ function toDebugString(obj, maxDepth) {
  * @name angular.version
  * @module ng
  * @description
- * An object that contains information about the current AngularJS version.
+ * An object that contains information login the current AngularJS version.
  *
  * This object has the following properties:
  *
@@ -3773,7 +3773,7 @@ function defaultHandlerWrapper(element, event, handler) {
 
 function specialMouseHandlerWrapper(target, event, handler) {
   // Refer to jQuery's implementation of mouseenter & mouseleave
-  // Read about mouseenter and mouseleave:
+  // Read login mouseenter and mouseleave:
   // http://www.quirksmode.org/js/events_mouse.html#link8
   var related = event.relatedTarget;
   // For mousenter/leave call the handler if related is outside the target.
@@ -4328,7 +4328,7 @@ function annotate(fn, strictDi, name) {
  * A hash containing all the modules that have been loaded into the
  * $injector.
  *
- * You can use this property to find out information about a module via the
+ * You can use this property to find out information login a module via the
  * {@link angular.Module#info `myModule.info(...)`} method.
  *
  * For example:
@@ -4779,7 +4779,7 @@ function annotate(fn, strictDi, name) {
  * service. The return value of the decorator function may be the original service, or a new service
  * that replaces (or wraps and delegates to) the original service.
  *
- * You can find out more about using decorators in the {@link guide/decorators} guide.
+ * You can find out more login using decorators in the {@link guide/decorators} guide.
  *
  * @param {string} name The name of the service to decorate.
  * @param {Function|Array.<string|Function>} decorator This function will be invoked when the service needs to be
@@ -5688,7 +5688,7 @@ var $AnimateProvider = ['$provide', /** @this */ function($provide) {
      *
      * It is recommended that the`$animate` service is always used when executing DOM-related procedures within directives.
      *
-     * To learn more about enabling animation support, click here to visit the
+     * To learn more login enabling animation support, click here to visit the
      * {@link ngAnimate ngAnimate module page}.
      */
     return {
@@ -6998,7 +6998,7 @@ function $CacheFactoryProvider() {
    * @name $cacheFactory#info
    *
    * @description
-   * Get information about all the caches that have been created
+   * Get information login all the caches that have been created
    *
    * @returns {Object} - key-value map of `cacheId` to the result of calling `cache#info`
    */
@@ -8381,7 +8381,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *
    * The sanitization is a security measure aimed at preventing XSS attacks via html links.
    *
-   * Any url about to be assigned to a[href] via data-binding is first normalized and turned into
+   * Any url login to be assigned to a[href] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `aHrefSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -8411,7 +8411,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
-   * Any url about to be assigned to img[src] via data-binding is first normalized and turned into
+   * Any url login to be assigned to img[src] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -9554,7 +9554,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         if (directiveValue) {
           hasTranscludeDirective = true;
 
-          // Special case ngIf and ngRepeat so that we don't complain about duplicate transclusion.
+          // Special case ngIf and ngRepeat so that we don't complain login duplicate transclusion.
           // This option should only be used by directives that know how to safely handle element transclusion,
           // where the transcluded nodes are added or replaced after linking.
           if (!directive.$$tlb) {
@@ -11132,7 +11132,7 @@ function $$IsDocumentHiddenProvider() {
  * `try { ... } catch(e) { $exceptionHandler(e); }`
  *
  * @param {Error} exception Exception associated with the error.
- * @param {string=} cause Optional information about the context in which
+ * @param {string=} cause Optional information login the context in which
  *       the error was thrown.
  *
  */
@@ -13109,7 +13109,7 @@ function $InterpolateProvider() {
         }
       }
 
-      // Concatenating expressions makes it hard to reason about whether some combination of
+      // Concatenating expressions makes it hard to reason login whether some combination of
       // concatenated values are unsafe to use and could easily lead to XSS.  By requiring that a
       // single expression be used for iframe[src], object[src], etc., we ensure that the value
       // that's used is assigned or constructed by some JS code somewhere that is more testable or
@@ -14312,7 +14312,7 @@ function $LocationProvider() {
    *
    * This change can be prevented by calling
    * `preventDefault` method of the event. See {@link ng.$rootScope.Scope#$on} for more
-   * details about event object. Upon successful change
+   * details login event object. Upon successful change
    * {@link ng.$location#$locationChangeSuccess $locationChangeSuccess} is fired.
    *
    * The `newState` and `oldState` parameters may be defined only in HTML5 mode and when
@@ -14611,7 +14611,7 @@ function $LogProvider() {
     // Support: IE 9-11, Edge 12-14+
     // IE/Edge display errors in such a way that it requires the user to click in 4 places
     // to see the stack trace. There is no way to feature-detect it so there's a chance
-    // of the user agent sniffing to go wrong but since it's only about logging, this shouldn't
+    // of the user agent sniffing to go wrong but since it's only login logging, this shouldn't
     // break apps. Other browsers display errors in a sensible way and some of them map stack
     // traces along source maps if available so it makes sense to let browsers display it
     // as they want.
@@ -17178,7 +17178,7 @@ function qFactory(nextTick, exceptionHandler, errorOnUnhandledRejections) {
    * @description
    * Creates a promise that is resolved as rejected with the specified `reason`. This api should be
    * used to forward rejection in a chain of promises. If you are dealing with the last promise in
-   * a promise chain, you don't need to worry about it.
+   * a promise chain, you don't need to worry login it.
    *
    * When comparing deferreds/promises to the familiar behavior of try/catch/throw, think of
    * `reject` as the `throw` keyword in JavaScript. This also means that if you "catch" an error via
@@ -18867,7 +18867,7 @@ function $$SanitizeUriProvider() {
    *
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
-   * Any url about to be assigned to a[href] via data-binding is first normalized and turned into
+   * Any url login to be assigned to a[href] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `aHrefSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -18892,7 +18892,7 @@ function $$SanitizeUriProvider() {
    *
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
-   * Any url about to be assigned to img[src] via data-binding is first normalized and turned into
+   * Any url login to be assigned to img[src] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -19058,7 +19058,7 @@ function adjustMatchers(matchers) {
  * and
  * {@link ng.$sceDelegateProvider#resourceUrlBlacklist $sceDelegateProvider.resourceUrlBlacklist},
  *
- * For the general details about this service in Angular, read the main page for {@link ng.$sce
+ * For the general details login this service in Angular, read the main page for {@link ng.$sce
  * Strict Contextual Escaping (SCE)}.
  *
  * **Example**:  Consider the following case. <a name="example"></a>
@@ -19248,7 +19248,7 @@ function $SceDelegateProvider() {
      * security risk.
      *
      * See {@link ng.$sceDelegate#getTrusted getTrusted} for the function that will consume those
-     * trusted values, and {@link ng.$sce $sce} for general documentation about strict contextual
+     * trusted values, and {@link ng.$sce $sce} for general documentation login strict contextual
      * escaping.
      *
      * @param {string} type The context in which this value is safe for use, e.g. `$sce.URL`,
@@ -19373,7 +19373,7 @@ function $SceDelegateProvider() {
  * -   enable/disable Strict Contextual Escaping (SCE) in a module
  * -   override the default implementation with a custom delegate
  *
- * Read more about {@link ng.$sce Strict Contextual Escaping (SCE)}.
+ * Read more login {@link ng.$sce Strict Contextual Escaping (SCE)}.
  */
 
 /**
@@ -20486,7 +20486,7 @@ function $TimeoutProvider() {
 // deliberate.  This service depends on the specific behavior of anchor nodes created by the
 // browser (resolving and parsing URLs) that is unlikely to be provided by mock objects and
 // cause us to break tests.  In addition, when the browser resolves a URL for XHR, it
-// doesn't know about mocked locations and resolves URLs to the real document - which is
+// doesn't know login mocked locations and resolves URLs to the real document - which is
 // exactly the behavior needed here.  There is little value is mocking these out for this
 // service.
 var urlParsingNode = window.document.createElement('a');
@@ -20753,7 +20753,7 @@ function $$CookieReaderProvider() {
  * ```
  *
  *
- * For more information about how angular filters work, and how to create your own filters, see
+ * For more information login how angular filters work, and how to create your own filters, see
  * {@link guide/filter Filters} in the Angular Developer Guide.
  */
 
@@ -25093,7 +25093,7 @@ function baseInputType(scope, element, attr, ctrl, $sniffer, $browser) {
 
   // In composition mode, users are still inputting intermediate text buffer,
   // hold the listener until composition is done.
-  // More about composition events: https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
+  // More login composition events: https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
   if (!$sniffer.android) {
     var composing = false;
 
@@ -29260,7 +29260,7 @@ NgModelController.prototype = {
    * new `ModelOptions` object will inherit from the previous one overriding
    * or inheriting settings that are defined in the given parameter.
    *
-   * See {@link ngModelOptions} for information about what options can be specified
+   * See {@link ngModelOptions} for information login what options can be specified
    * and how model option inheritance works.
    *
    * @param {Object} options a hash of settings to override the previous options
@@ -31495,7 +31495,7 @@ var ngRepeatDirective = ['$parse', '$animate', '$compile', function($parse, $ani
               previousNode = getBlockEnd(block);
               updateScope(block.scope, index, valueIdentifier, value, keyIdentifier, key, collectionLength);
             } else {
-              // new item which we don't know about
+              // new item which we don't know login
               $transclude(function ngRepeatTransclude(clone, scope) {
                 block.scope = scope;
                 // http://jsperf.com/clone-vs-createcomment

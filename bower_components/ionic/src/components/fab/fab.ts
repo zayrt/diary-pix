@@ -26,7 +26,7 @@ import { Ion } from '../ion';
   *
   * In case the button is not wrapped with `<ion-fab>`, the fab button will behave like a normal button, scrolling with the content.
   *
-  * See [ion-fab] to learn more information about how to position the fab button.
+  * See [ion-fab] to learn more information login how to position the fab button.
   *
   * @property [mini] - Makes a fab button with a reduced size.
   *

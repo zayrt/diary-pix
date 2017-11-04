@@ -279,11 +279,11 @@ describe('UrlSerializer', () => {
     });
 
     it('should not have multiple dashes', () => {
-      expect(formatUrlPart('Contact Detail Page')).toEqual('contact-detail-page');
+      expect(formatUrlPart('Contact Detail Page')).toEqual('register-detail-page');
     });
 
     it('should change to pascal case for multiple words', () => {
-      expect(formatUrlPart('ContactDetailPage')).toEqual('contact-detail-page');
+      expect(formatUrlPart('ContactDetailPage')).toEqual('register-detail-page');
     });
 
     it('should change to pascal case for one work', () => {
@@ -442,10 +442,10 @@ describe('UrlSerializer', () => {
 
     it('should create path from name if path missing', () => {
       let links: NavLink[] = [
-        { component: ContactDetailPage, name: 'contact-detail-page' },
+        { component: ContactDetailPage, name: 'register-detail-page' },
         { component: MockView2, name: 'view-two'  },
       ];
-      expect(normalizeLinks(links)[0].segment).toEqual('contact-detail-page');
+      expect(normalizeLinks(links)[0].segment).toEqual('register-detail-page');
       expect(normalizeLinks(links)[1].segment).toEqual('view-two');
     });
 
@@ -747,7 +747,7 @@ describe('UrlSerializer', () => {
     });
 
     it('should return a segment for the secondary id even if it has the same name as a router link advanced', () => {
-      const link1 = { component: MockView1, name: 'about', segment: 'about/:id' };
+      const link1 = { component: MockView1, name: 'login', segment: 'login/:id' };
       const link2 = { component: MockView1, name: 'schedule', segment: 'schedule/paramOne/:paramOne/paramTwo/:paramTwo' };
       const link3 = { component: MockView1, name: 'ThirdPage', segment: 'third-page' };
       const link4 = { component: MockView1, name: 'FourthPage', segment: 'fourth-page/object/:objectId' };
@@ -755,7 +755,7 @@ describe('UrlSerializer', () => {
 
       const links = normalizeLinks([link1, link2, link3, link4, link5]);
       const url = 'schedule/schedule/paramOne/hello/paramTwo/goodbye'
-                  + '/about/about/123'
+                  + '/login/login/123'
                   + '/tabs/t1/tab-one/third-page'
                   + '/tabs/t2/tab-two/fourth-page/object/456'
                   + '/fifth-page/taco-page';
@@ -771,9 +771,9 @@ describe('UrlSerializer', () => {
       expect(segmentPairs[0].segments[0].data.paramOne).toEqual('hello');
       expect(segmentPairs[0].segments[0].data.paramTwo).toEqual('goodbye');
 
-      expect(segmentPairs[0].segments[1].id).toEqual('about/123');
-      expect(segmentPairs[0].segments[1].name).toEqual('about');
-      expect(segmentPairs[0].segments[1].secondaryId).toEqual('about');
+      expect(segmentPairs[0].segments[1].id).toEqual('login/123');
+      expect(segmentPairs[0].segments[1].name).toEqual('login');
+      expect(segmentPairs[0].segments[1].secondaryId).toEqual('login');
       expect(segmentPairs[0].segments[1].data.id).toEqual('123');
 
       expect(segmentPairs[1].segments.length).toEqual(1);

@@ -218,7 +218,7 @@ describe('Tabs', () => {
       let tab3 = mockTab(tabs);
 
       tab1.tabUrlPath = 'account';
-      tab2.tabUrlPath = 'contact';
+      tab2.tabUrlPath = 'register';
       tab3.tabUrlPath = 'settings';
 
       let selectedIndex = tabs._getSelectedTabIndex('settings');

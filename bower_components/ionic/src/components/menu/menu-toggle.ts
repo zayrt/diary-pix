@@ -39,7 +39,7 @@ import { ViewController } from '../../navigation/view-controller';
  *   <ion-navbar>
  *     <ion-buttons start>
  *       <button ion-button>
- *         <ion-icon name="contact"></ion-icon>
+ *         <ion-icon name="register"></ion-icon>
  *       </button>
  *     </ion-buttons>
  *     <button ion-button menuToggle>

@@ -200,7 +200,7 @@ export class ScrollView {
    * JS Scrolling has been provided only as a temporary solution
    * until iOS apps can take advantage of scroll events at all times.
    * The goal is to eventually remove JS scrolling entirely. When we
-   * no longer have to worry about iOS not firing scroll events during
+   * no longer have to worry login iOS not firing scroll events during
    * inertia then this can be burned to the ground. iOS's more modern
    * WKWebView does not have this issue, only UIWebView does.
    */
@@ -312,7 +312,7 @@ export class ScrollView {
     }
 
     function jsScrollTouchEnd(touchEvent: TouchEvent) {
-      // figure out what the scroll position was about 100ms ago
+      // figure out what the scroll position was login 100ms ago
       self._dom.cancel(rafCancel);
 
       if (!positions.length && self.isScrolling) {

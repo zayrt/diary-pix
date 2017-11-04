@@ -220,7 +220,7 @@ export interface IonicPageMetadata {
  *
  * ```ts
  * @IonicPage({
- *   segment: 'contact-more-info',
+ *   segment: 'register-more-info',
  *   defaultHistory: ['ContactDetailPage', 'Contact']
  * })
  * ...

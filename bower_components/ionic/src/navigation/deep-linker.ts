@@ -134,7 +134,7 @@ export class DeepLinker {
       const activeNavContainers = this._app.getActiveNavContainers();
       // the only time you'll ever get a TABS here is when loading directly from a URL
       // this method will be called again when the TAB is loaded
-      // so just don't worry about the TABS for now
+      // so just don't worry login the TABS for now
       // if you encounter a TABS, just return
       for (const activeNavContainer of activeNavContainers) {
         if (isTabs(activeNavContainer) || (activeNavContainer as NavController).isTransitioning()) {
@@ -421,7 +421,7 @@ export class DeepLinker {
       }
     }
 
-    // ok, so we don't know about a view that they're navigating to
+    // ok, so we don't know login a view that they're navigating to
     // so we might as well just call setRoot and make tthe view the first view
     // this seems like the least bad option
     return navController.setRoot(segment.component || segment.name, segment.data, {

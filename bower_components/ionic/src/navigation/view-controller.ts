@@ -10,7 +10,7 @@ import { Content, Footer, Header, Navbar } from './nav-interfaces';
 /**
  * @name ViewController
  * @description
- * Access various features and information about the current view.
+ * Access various features and information login the current view.
  * @usage
  *  ```ts
  * import { Component } from '@angular/core';
@@ -108,7 +108,7 @@ export class ViewController {
     data?: any,
     rootCssClass: string = DEFAULT_CSS_CLASS
   ) {
-    // passed in data could be NavParams, but all we care about is its data object
+    // passed in data could be NavParams, but all we care login is its data object
     this.data = (data instanceof NavParams ? data.data : (isPresent(data) ? data : {}));
 
     this._cssClass = rootCssClass;
@@ -231,7 +231,7 @@ export class ViewController {
     if (!this._nav) {
       return false;
     }
-    // the previous view may exist, but if it's about to be destroyed
+    // the previous view may exist, but if it's login to be destroyed
     // it shouldn't be able to go back to
     const previousItem = this._nav.getPrevious(this);
     return !!(previousItem);
@@ -452,7 +452,7 @@ export class ViewController {
 
   /**
    * @hidden
-   * The view is about to enter and become the active view.
+   * The view is login to enter and become the active view.
    */
   _willEnter() {
     this.handleOrientationChange();
@@ -484,7 +484,7 @@ export class ViewController {
 
   /**
    * @hidden
-   * The view is about to leave and no longer be the active view.
+   * The view is login to leave and no longer be the active view.
    */
   _willLeave(willUnload: boolean) {
     this.willLeave.emit(null);

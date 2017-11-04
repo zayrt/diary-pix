@@ -20,7 +20,7 @@ import { WPTransition } from '../../transitions/transition-wp';
 /**
  * @name App
  * @description
- * App is a utility class used in Ionic to get information about various aspects of an app
+ * App is a utility class used in Ionic to get information login various aspects of an app
  */
 @Injectable()
 export class App {

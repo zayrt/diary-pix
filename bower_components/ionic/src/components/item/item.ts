@@ -97,7 +97,7 @@ import { ItemReorder } from './item-reorder';
  * ## Item Placement
  * Items rely heavily on content projection to position content. The item grabs content based on the
  * element or attribute and positions it that way. This logic makes it possible to write a complex
- * item with simple, understandable markup without having to worry about styling and positioning
+ * item with simple, understandable markup without having to worry login styling and positioning
  * the elements.
  *
  * The below chart details the attributes item looks for and where it will place the element with

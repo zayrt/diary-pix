@@ -34,7 +34,8 @@ export class PagesService {
     return this.http.post(API_URL + 'users/sign_in', JSON.stringify(data), options)
       .map(res => {
         res = res.json();
-        this.user = new User(res.user);
+        console.log(res)
+        // this.user = new User(res.user);
       });
   }
 
@@ -50,7 +51,7 @@ export class PagesService {
     return this.http.post(API_URL + 'users', JSON.stringify(data), options)
       .map(res => {
         res = res.json();
-        this.user = new User(res.user);
+        // this.user = new User(res.user);
       });
   }
 
