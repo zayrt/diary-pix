@@ -4,6 +4,7 @@ import {PagesService} from "../pages.services";
 import {SpinnerService} from "angular-spinners";
 import {ToastsManager} from "ng2-toastr";
 import {ImagePicker} from "@ionic-native/image-picker";
+import {User} from "../user.model";
 
 @Component({
   selector: 'page-register',
@@ -32,11 +33,12 @@ export class RegisterPage {
     this.pageService.signup(data).subscribe(
       res => {
         this.spinnerService.hide('loader');
-        this.toastr.success('Inscription réussi !', null, {toastLife: 10000});
+        this.pageService.user = new User(res.user);
+        this.toastr.success('Inscription réussi !', null, {toastLife: 1000});
       },
       error => {
         let err = JSON.parse(error._body).error;
-        this.toastr.error(err, null, {toastLife: 10000});
+        this.toastr.error(err, null, {toastLife: 1000});
         this.spinnerService.hide('loader');
       },
       () => {
@@ -50,7 +52,6 @@ export class RegisterPage {
     this.imagePicker.getPictures(options).then((results) => {
       this.filePath = results[0];
       console.log(this.filePath);
-      console.log('HISSS')
     }, (err) => {
       console.log(err);
     });

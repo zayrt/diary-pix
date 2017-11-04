@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {PagesService} from "../pages.services";
 import {SpinnerService} from "angular-spinners";
 import {ToastsManager} from "ng2-toastr";
+import {User} from "../user.model";
+import {NavController} from "ionic-angular";
+
 
 @Component({
   selector: 'page-login',
@@ -11,7 +14,7 @@ import {ToastsManager} from "ng2-toastr";
 export class LoginPage {
   signinForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private pageService: PagesService, private spinnerService: SpinnerService,
+  constructor(public nav: NavController, private fb: FormBuilder, private pageService: PagesService, private spinnerService: SpinnerService,
               public toastr: ToastsManager) {
     this.signinForm = this.buildForm();
   }
@@ -25,11 +28,13 @@ export class LoginPage {
     this.pageService.signin(data).subscribe(
       res => {
         this.spinnerService.hide('loader');
-        this.toastr.success('Connexion réussi !', null, {toastLife: 10000});
+        this.pageService.user = new User(res.user);
+        this.toastr.success('Connexion réussi !', null, {toastLife: 1000});
+        this.nav.parent.select(0);
       },
       error => {
         let err = JSON.parse(error._body).error;
-        this.toastr.error(err, null, {toastLife: 10000});
+        this.toastr.error(err, null, {toastLife: 1000});
         this.spinnerService.hide('loader');
       },
       () => {

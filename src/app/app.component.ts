@@ -1,10 +1,12 @@
 import {Component, ViewContainerRef} from '@angular/core';
-import { Platform } from 'ionic-angular';
+import {NavController, Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import {ToastsManager} from "ng2-toastr";
+import {PagesService} from "../pages/pages.services";
+import {SpinnerService} from "angular-spinners";
 
 @Component({
   templateUrl: 'app.html'

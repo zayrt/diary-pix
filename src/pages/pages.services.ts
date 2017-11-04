@@ -6,12 +6,10 @@ import "rxjs/add/observable/fromPromise";
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-import {Observable} from "rxjs/Observable";
+// import {Observable} from "rxjs/Observable";
 import {User} from "./user.model";
 
 const API_URL = "http://memoriz-api.herokuapp.com/";
-const headers = new Headers({'Accept': 'application/json', 'Content-Type': 'application/json'});
-const options = new RequestOptions({headers: headers});
 
 @Injectable()
 export class PagesService {
@@ -25,18 +23,15 @@ export class PagesService {
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
-    // if (this.user != null)
-      // headers.append('token', this.user.authentication_token.toString());
+    if (this.user != null)
+      headers.append('token', this.user.token.toString());
     return headers;
   }
 
   signin(data) {
+    const options = new RequestOptions({headers: this.getHeaders()});
     return this.http.post(API_URL + 'users/sign_in', JSON.stringify(data), options)
-      .map(res => {
-        res = res.json();
-        console.log(res)
-        // this.user = new User(res.user);
-      });
+      .map(res => res.json());
   }
 
   signup(data) {
@@ -48,11 +43,15 @@ export class PagesService {
       params: data
     }
     return Observable.fromPromise(this.fileTransfer.upload(filePath, API_URL + '/users' , fileOptions)); */
+    const options = new RequestOptions({headers: this.getHeaders()});
     return this.http.post(API_URL + 'users', JSON.stringify(data), options)
-      .map(res => {
-        res = res.json();
-        // this.user = new User(res.user);
-      });
+      .map(res => res.json());
+  }
+
+  getPictures() {
+    const options = new RequestOptions({headers: this.getHeaders()});
+    return this.http.get(API_URL + 'contents', options)
+      .map(res => res.json());
   }
 
 }

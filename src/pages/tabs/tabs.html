@@ -1,5 +1,5 @@
 <ion-tabs>
   <ion-tab [root]="tab1Root" tabTitle="Accueil" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Connexion" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Inscription" tabIcon="contacts"></ion-tab>
+  <fieldset [disabled]="pageService.user"><ion-tab [root]="tab2Root" tabTitle="Connexion" tabIcon="information-circle"></ion-tab></fieldset>
+  <fieldset [disabled]="pageService.user"><ion-tab [root]="tab3Root" tabTitle="Inscription" tabIcon="contacts"></ion-tab></fieldset>
 </ion-tabs>

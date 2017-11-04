@@ -1,8 +1,36 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Accueil</ion-title>
+    <ion-title style="display: inline-block">Accueil</ion-title>
+    <a style="display: inline-block; color: black;" (click)="pageService.user = null" class="pull-right" *ngIf="pageService.user">Déconnexion</a>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <div *ngIf="!pageService.user">S'incrire ou se connecter pour accéder à votre journal photo</div>
+
+  <div *ngIf="pageService.user" class="container mt40">
+    <script src="http://rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
+
+    <section class="row" *ngFor="let p of pictures">
+
+      <article class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <a class="zoom" data-title="Amazing Nature" data-footer="The beauty of nature" data-type="image" data-toggle="lightbox">
+              <img src={{p.urls.original}} />
+              <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
+            </a>
+          </div>
+          <div class="panel-footer">
+            <h4><a href="#" title="Nature Portfolio">{{p.caption}}</a></h4>
+            <span class="pull-right">
+              <i id="like1" class="glyphicon glyphicon-thumbs-up"></i> <div id="like1-bs3"></div>
+              <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike1-bs3"></div>
+            </span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </div>
 </ion-content>
