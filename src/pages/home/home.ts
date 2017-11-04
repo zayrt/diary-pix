@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {PagesService} from "../pages.services";
 import {SpinnerService} from "angular-spinners";
-
+import {ToastsManager} from "ng2-toastr";
+import {ImagePicker} from "@ionic-native/image-picker";
 
 @Component({
   selector: 'page-home',
@@ -11,10 +11,11 @@ import {SpinnerService} from "angular-spinners";
 })
 export class HomePage {
   signupForm: FormGroup;
-  status = '';
-  snack_msg;
+  fileName: string = "";
+  filePath: string = "";
 
-  constructor(public navCtrl: NavController, private fb: FormBuilder, private pageService: PagesService, private spinnerService: SpinnerService) {
+  constructor(private fb: FormBuilder, private pageService: PagesService, private spinnerService: SpinnerService,
+              public toastr: ToastsManager, private imagePicker: ImagePicker) {
     this.signupForm = this.buildForm();
   }
 
@@ -25,24 +26,34 @@ export class HomePage {
       username: this.signupForm.controls.username.value,
       email: this.signupForm.controls.email.value,
       password: this.signupForm.controls.password.value,
-      password_confirmation: this.signupForm.controls.password_confirmation.value,
-      avatar: this.signupForm.controls.avatar.value,
+      password_confirmation: this.signupForm.controls.password_confirmation.value
     };
     this.spinnerService.show('loader');
     this.pageService.signup(data).subscribe(
       res => {
-        this.status = 'success';
-        this.snack_msg = 'Inscription réussi !';
+        this.spinnerService.hide('loader');
+        this.toastr.success('Inscription réussi !', null, {toastLife: 10000});
       },
       error => {
         let err = JSON.parse(error._body).error;
-        this.snack_msg = err;
-        this.status = 'error';
+        this.toastr.error(err, null, {toastLife: 10000});
         this.spinnerService.hide('loader');
       },
       () => {
       }
     );
+  }
+
+  fileChange() {
+    var options = { maximumImagesCount: 1 };
+
+    this.imagePicker.getPictures(options).then((results) => {
+      this.filePath = results[0];
+      console.log(this.filePath);
+      console.log('HISSS')
+    }, (err) => {
+      console.log(err);
+    });
   }
 
   buildForm() {

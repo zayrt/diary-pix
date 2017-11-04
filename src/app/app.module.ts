@@ -10,8 +10,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {PagesService} from "../pages/pages.services";
 import {HttpModule} from "@angular/http";
-import {MatSnackBar} from '@angular/material';
 import {SpinnerModule} from "angular-spinners";
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { ImagePicker } from '@ionic-native/image-picker';
 
 @NgModule({
   declarations: [
@@ -25,8 +28,9 @@ import {SpinnerModule} from "angular-spinners";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     SpinnerModule,
-    MatSnackBar,
-    HttpModule
+    HttpModule,
+    ToastModule.forRoot(),
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,6 +43,9 @@ import {SpinnerModule} from "angular-spinners";
   providers: [
     StatusBar,
     SplashScreen,
+    FileTransferObject,
+    FileTransfer,
+    ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PagesService
   ],
