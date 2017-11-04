@@ -12,6 +12,14 @@ puis stockage du token dans un service.
 - Accès au journal photo, requête GET, renvoi d'une liste d'image par l'API et affichage.
 
 La fonctionnalité permettant d'ajouter une photo n'a pas été développer par manque de temps, néanmoins des images ont été
-ajouter directement dans la base de donnée.
+ajouter directement dans la base de donnée pour le compte de test :
+email : zelloufi.ilyas@gmail.com
+mot de passe : password
 
+nom de groupe: CSB-TNZ
+nom: Zelloufi
+prénom: Ilyas
+email: ilyas.zelloufi@epitech.eu
+
+N'a pas assisté au cours.
 
