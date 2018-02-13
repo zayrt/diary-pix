@@ -17,9 +17,14 @@ email : zelloufi.ilyas@gmail.com
 mot de passe : password
 
 nom de groupe: CSB-TNZ
+
 nom: Zelloufi
 prénom: Ilyas
 email: ilyas.zelloufi@epitech.eu
 
-N'a pas assisté au cours.
+nom: Marouf
+prénom: Nour El Islem
+email: nour-el-islem@epitech.eu
+
+N'ont pas assisté au cours.
 
